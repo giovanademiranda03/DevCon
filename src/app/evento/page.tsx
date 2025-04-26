@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Feature } from "@/components/ui/feature";
@@ -8,21 +8,39 @@ import { ArrowRight, MapPin, Timer } from "@phosphor-icons/react";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { LayoutGrid } from "@/components/ui/layout-grid";
 import { SkeletonFour, SkeletonOne, SkeletonThree, SkeletonTwo } from "@/components/ui/card-skeleton";
+import Footer from "@/components/ui/footer";
 
 export default function Event() {
+   const [loading, setLoading] = useState(false);
+  
+    const handleClick = () => {
+      setLoading(true);
+    };
+    
   return (
-    <div className="w-full h-full pt-10 grid grid-cols-1 max-w-7xl mx-auto gap-4 relative">  
-    <div className="flex justify-between w-full items-center">
+    <div className="w-full h-full pt-10 grid px-6 md:px-6 lg:px-10 xl:px-0 grid-cols-1 max-w-7xl mx-auto gap-5 md:gap-8 relative">  
+    <div className="flex flex-col md:flex-row gap-5 justify-between w-full items-center">
       <Link href="/">
         <h2 className="text-start text-2xl font-bold text-balance text-white md:text-3xl lg:text-4xl w-full">DevCon Festival 2025</h2>
       </Link>
 
-      <Link href={'/compra'}>
+      <div className="hidden md:flex">
+      <Link href={'/compra'} onClick={handleClick}>
           <Button variant={"default"}  size={"lg"} >
-            Comprar Ingressos
+            <span>{loading ? 'Carregando...' : 'Comprar Ingressos'}</span>
             <ArrowRight size={18} />
           </Button>
         </Link>
+      </div>
+
+      <div className="flex md:hidden">
+        <Link href={'/compra'} onClick={handleClick}>
+          <Button variant={"default"}  size={"sm"} >
+            <span>{loading ? 'Carregando...' : 'Comprar Ingressos'}</span>
+            <ArrowRight size={18} />
+          </Button>
+        </Link>
+      </div>
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-6 pt-6">
@@ -32,19 +50,42 @@ export default function Event() {
      <p>Prepare-se para dois dias imersivos de conhecimento, inovação e networking no coração do <strong className="text-neutral-300">Parque Tecnológico de Sorocaba</strong></p>} icon={<MapPin size={16} weight="fill"/>} />
     </div>
 
-    <div className="flex flex-col w-full gap-2 bg-green-950 rounded-2xl py-10 my-8">
+    <div className="flex flex-col w-full gap-2 px-3 bg-green-950 rounded-2xl py-8 md:py-10">
       <h2 className="text-center text-xl font-bold text-balance text-white md:text-2xl lg:text-3xl">Atrações</h2>
       <p className="text-center text-neutral-300 text-sm lg:text-base">Fique por dentro das atrações do maior encontro de devs</p> 
       <AnimatedTestimonials testimonials={attractions} />
     </div>
 
-    <div className="flex flex-col w-full pt-10 gap-2 bg-neutral-800/40 rounded-2xl">
+    <div className="flex flex-col w-full pt-5 md:pt-10 px-3 gap-2 bg-neutral-800/40 rounded-2xl">
       <h2 className="text-center text-xl font-bold text-balance text-white md:text-2xl lg:text-3xl">Eventos anteriores</h2>
       <p className="text-center text-neutral-300 text-sm lg:text-base">Clique nas imagens para mais detalhes</p> 
-        <div className="h-screen w-full px-10 py-5">
+        <div className="h-screen w-full px-3 md:px-10 py-5">
           <LayoutGrid cards={cards} />
         </div>
     </div>
+
+    <div className="my-5 md:mt-10 py-20 flex flex-col items-center gap-5 bg-green-950/50 rounded-2xl">
+      <h2 className="text-white text-2xl md:text-3xl font-bold text-center">Garanta já o seu ingresso</h2>
+      <div className="hidden md:flex">
+       <Link href={'/compra'} onClick={handleClick}>
+          <Button variant={"default"}  size={"lg"} >
+            <span>{loading ? 'Carregando...' : 'Comprar Ingressos'}</span>
+            <ArrowRight size={18} />
+          </Button>
+        </Link>
+      </div>
+
+      <div className="flex md:hidden">
+        <Link href={'/compra'} onClick={handleClick}>
+            <Button variant={"default"}  size={"sm"} >
+            <span>{loading ? 'Carregando...' : 'Comprar Ingressos'}</span>
+            <ArrowRight size={18} />
+            </Button>
+        </Link>
+      </div>
+    </div>
+
+    <Footer />
     </div>
   );
 }
