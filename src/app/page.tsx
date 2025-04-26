@@ -1,3 +1,5 @@
+import { CTA } from "@/components/ui/cta";
+
 export default function Home() {
   return (
     <div className="relative mx-auto flex h-screen w-full max-w-7xl flex-col items-center justify-center overflow-hidden rounded-3xl">
@@ -11,6 +13,8 @@ export default function Home() {
       <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-sm text-neutral-200 md:text-lg">
       O maior evento de Desenvolvedores Front-End do ano. Conecte-se com os melhores devs, descubra novas ferramentas e leve sua UI ao próximo nível.
       </p>
+
+      <CTA />
     </div>
   );
 }
