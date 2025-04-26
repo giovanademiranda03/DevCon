@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Feature } from "@/components/ui/feature";
 import { ArrowRight, MapPin, Timer } from "@phosphor-icons/react";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { LayoutGrid } from "@/components/ui/layout-grid";
+import { SkeletonFour, SkeletonOne, SkeletonThree, SkeletonTwo } from "@/components/ui/card-skeleton";
 
 export default function Event() {
   return (
@@ -34,7 +36,15 @@ export default function Event() {
       <h2 className="text-center text-xl font-bold text-balance text-white md:text-2xl lg:text-3xl">Atrações</h2>
       <p className="text-center text-neutral-300 text-sm lg:text-base">Fique por dentro das atrações do maior encontro de devs</p> 
       <AnimatedTestimonials testimonials={attractions} />
-     </div>
+    </div>
+
+    <div className="flex flex-col w-full pt-10 gap-2 bg-neutral-800/40 rounded-2xl">
+      <h2 className="text-center text-xl font-bold text-balance text-white md:text-2xl lg:text-3xl">Eventos anteriores</h2>
+      <p className="text-center text-neutral-300 text-sm lg:text-base">Clique nas imagens para mais detalhes</p> 
+        <div className="h-screen w-full px-10 py-5">
+          <LayoutGrid cards={cards} />
+        </div>
+    </div>
     </div>
   );
 }
@@ -74,5 +84,36 @@ const attractions = [
     name: "Lucas Ferreira",
     designation: "Especialista em Performance Web na VeloxCode",
     src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3",
+  },
+];
+
+const cards = [
+  {
+    id: 1,
+    content: <SkeletonOne />,
+    className: "md:col-span-2",
+    thumbnail:
+      "https://img.freepik.com/fotos-gratis/pessoas-que-participam-de-um-evento-de-alto-protocolo_23-2150951243.jpg?t=st=1745633886~exp=1745637486~hmac=2189eedecf8869257316dd9778f8cd6a9d75cd3947f13adf16fdfe6928e805b8&w=1380",
+  },
+  {
+    id: 2,
+    content: <SkeletonTwo />,
+    className: "col-span-1",
+    thumbnail:
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    id: 3,
+    content: <SkeletonThree />,
+    className: "col-span-1",
+    thumbnail:
+      "https://images.unsplash.com/photo-1582192730841-2a682d7375f9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    id: 4,
+    content: <SkeletonFour />,
+    className: "md:col-span-2",
+    thumbnail:
+      "https://images.unsplash.com/photo-1582192903020-8a5e59dcdcf2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
