@@ -1,9 +1,8 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-
 import { useEffect, useState } from "react";
 
 type Testimonial = {
@@ -88,6 +87,7 @@ export const AnimatedTestimonials = ({
                     height={500}
                     draggable={false}
                     className="h-full w-full rounded-3xl object-cover object-center"
+                    priority
                   />
                 </motion.div>
               ))}
