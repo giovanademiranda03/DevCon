@@ -7,8 +7,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='w-full h-14 grid grid-cols-1 md:grid-cols-2 items-center justify-between'>
-      <p className='text-white text-xs md:text-sm lg:text-base font-semibold'>Copyright © {currentYear} Giovana de Miranda</p>
+    <footer className='w-full min-h-14 flex flex-col md:flex-row items-center gap-5 justify-between'>
+      <p className='text-white text-center text-xs md:text-sm lg:text-base font-semibold'>Copyright © {currentYear} Giovana de Miranda</p>
 
       <div className='flex gap-4 items-center justify-end'>
         <Link target="_blanck" href="https://github.com/giovanademiranda03">
