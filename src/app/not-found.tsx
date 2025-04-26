@@ -33,7 +33,7 @@ export default function NotFound() {
           />
 
           <p className="text-white text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Parece que a página que você est procurando não existe. Volte para a Home!
+            Parece que a página que você está procurando não existe. Volte para a Home!
           </p>
 
           <Link href="/">

@@ -18,7 +18,7 @@ export default function Event() {
     };
     
   return (
-    <div className="w-full h-full pt-10 grid px-6 md:px-6 lg:px-10 xl:px-0 grid-cols-1 max-w-7xl mx-auto gap-5 md:gap-8 relative">  
+    <div className="w-full h-full pt-10 grid px-6 md:px-6 lg:px-10 xl:px-0 grid-cols-1 max-w-7xl mx-auto gap-5 md:gap-10 relative">  
     <div className="flex flex-col md:flex-row gap-5 justify-between w-full items-center">
       <Link href="/">
         <h2 className="text-start text-2xl font-bold text-balance text-white md:text-3xl lg:text-4xl w-full">DevCon Festival 2025</h2>
@@ -64,7 +64,7 @@ export default function Event() {
         </div>
     </div>
 
-    <div className="my-5 md:mt-10 py-20 flex flex-col items-center gap-5 bg-green-950/50 rounded-2xl">
+    <div className="py-20 flex flex-col items-center gap-5 bg-green-950/50 rounded-2xl">
       <h2 className="text-white text-2xl md:text-3xl font-bold text-center">Garanta já o seu ingresso</h2>
       <div className="hidden md:flex">
        <Link href={'/compra'} onClick={handleClick}>
