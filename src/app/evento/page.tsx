@@ -21,7 +21,7 @@ export default function Event() {
     <div className="w-full h-full pt-10 grid px-6 md:px-6 lg:px-10 xl:px-0 grid-cols-1 max-w-7xl mx-auto gap-5 md:gap-10 relative">  
     <div className="flex flex-col md:flex-row gap-5 justify-between w-full items-center">
       <Link href="/">
-        <h2 className="text-start text-2xl font-bold text-balance text-white md:text-3xl lg:text-4xl w-full">DevCon Festival 2025</h2>
+        <h2 className="text-center md:text-start text-3xl font-bold text-balance text-white lg:text-4xl w-full">DevCon Festival 2025</h2>
       </Link>
 
       <div className="hidden md:flex">
@@ -35,7 +35,7 @@ export default function Event() {
 
       <div className="flex md:hidden">
         <Link href={'/compra'} onClick={handleClick}>
-          <Button variant={"default"}  size={"sm"} >
+          <Button variant={"default"}  size={"default"} >
             <span>{loading ? 'Carregando...' : 'Comprar Ingressos'}</span>
             <ArrowRight size={18} />
           </Button>
@@ -43,7 +43,7 @@ export default function Event() {
       </div>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-6 pt-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-6 pt-3">
      <Feature title="Data" description={
       <p>Nos dias <strong className="text-neutral-300">22 e 23 de Novembro de 2025,</strong> o DevCon Festival vai reunir os maiores nomes do front-end em uma experiência inesquecível.</p> } icon={<Timer size={16} weight="fill"/>} />
      <Feature title="Local" description={
@@ -59,7 +59,7 @@ export default function Event() {
     <div className="flex flex-col w-full pt-5 md:pt-10 px-3 gap-2 bg-neutral-800/40 rounded-2xl">
       <h2 className="text-center text-xl font-bold text-balance text-white md:text-2xl lg:text-3xl">Eventos anteriores</h2>
       <p className="text-center text-neutral-300 text-sm lg:text-base">Clique nas imagens para mais detalhes</p> 
-        <div className="h-screen w-full px-3 md:px-10 py-5">
+        <div className="min-h-[400px] md:h-screen w-full px-3 md:px-10 py-5">
           <LayoutGrid cards={cards} />
         </div>
     </div>
@@ -77,7 +77,7 @@ export default function Event() {
 
       <div className="flex md:hidden">
         <Link href={'/compra'} onClick={handleClick}>
-            <Button variant={"default"}  size={"sm"} >
+            <Button variant={"default"}  size={"default"} >
             <span>{loading ? 'Carregando...' : 'Comprar Ingressos'}</span>
             <ArrowRight size={18} />
             </Button>
@@ -103,7 +103,7 @@ const attractions = [
       "Desenvolvedor apaixonado por animações e interações criativas, Bruno é referência quando o assunto é motion design com Framer Motion e Aceternity.",
     name: "Bruno Martins",
     designation: "Front-End Engineer na Animar Digital",
-    src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3",
+    src: "https://images.unsplash.com/photo-1529421308418-eab98863cee4?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
   {
     quote:
@@ -132,28 +132,28 @@ const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
-    className: "md:col-span-2",
+    className: "min-h-48 md:col-span-2",
     thumbnail:
       "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-1",
+    className: "min-h-48 md:col-span-1",
     thumbnail:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
     content: <SkeletonThree />,
-    className: "col-span-1",
+    className: "min-h-48 md:col-span-1",
     thumbnail:
       "https://images.unsplash.com/photo-1582192730841-2a682d7375f9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 4,
     content: <SkeletonFour />,
-    className: "md:col-span-2",
+    className: "min-h-48 md:col-span-2",
     thumbnail:
       "https://images.unsplash.com/photo-1582192903020-8a5e59dcdcf2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
